@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SURYA X TRADES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -12,193 +12,267 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-
     body {
-      background: #0d0d0d;
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 40%, #020617 100%);
+      color: #e2e8f0;
+      text-align: center;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
+      justify-content: space-between;
+      padding: 20px 16px;
     }
-
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 28px 28px;
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
-    .card {
-      background: #1a1a1a;
-      border-radius: 28px;
-      padding: 40px 28px 36px;
-      width: 100%;
-      max-width: 380px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      position: relative;
-      z-index: 1;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .logo-wrap {
-      margin-bottom: 22px;
-    }
-
-    .logo-wrap img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255,255,255,0.1);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-
-    .logo-fallback {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #f59e0b, #ef4444);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    main {
+      max-width: 420px;
       margin: 0 auto;
-      font-size: 28px;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 1px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      width: 100%;
     }
-
     h1 {
-      font-size: 26px;
-      font-weight: 800;
-      color: #ffffff;
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 30px;
       letter-spacing: 1px;
-      margin-bottom: 6px;
       text-transform: uppercase;
     }
-
-    .subscribers {
+    .tagline {
       font-size: 15px;
-      color: #a1a1aa;
-      margin-bottom: 18px;
+      margin: 12px 0 8px;
+      color: #94a3b8;
+      font-weight: 500;
     }
-
-    .quote {
+    .timer {
+      display: inline-block;
+      background: rgba(251, 146, 60, 0.12);
+      border: 1px solid rgba(251, 146, 60, 0.35);
+      color: #fb923c;
       font-size: 15px;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 50px;
+      margin: 14px 0 10px;
+      box-shadow: 0 0 20px rgba(251, 146, 60, 0.15);
+    }
+    .timer span {
+      font-weight: 700;
+      font-size: 17px;
+      color: #fdba74;
+    }
+    .profile {
+      margin: 20px 0 14px;
+      position: relative;
+    }
+    .profile img {
+      width: 155px;
+      height: 155px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.4),
+                  0 0 60px rgba(56, 189, 248, 0.15);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .profile img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.55),
+                  0 0 80px rgba(56, 189, 248, 0.2);
+    }
+    h2 {
+      color: #f1f5f9;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .sub-text {
+      font-size: 14px;
+      color: #94a3b8;
+      margin: 6px 0 10px;
+    }
+    .quote {
+      font-size: 14px;
       color: #fbbf24;
       font-weight: 500;
-      margin-bottom: 14px;
-      line-height: 1.4;
+      margin-bottom: 18px;
     }
-
-    .tags {
-      font-size: 13px;
-      color: #d4d4d8;
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tags span {
-      background: rgba(255,255,255,0.06);
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-    }
-
-    .dots {
-      color: #71717a;
-      font-size: 22px;
-      letter-spacing: 4px;
-      margin: 18px 0 22px;
-    }
-
-    .join-btn {
+    .view-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      background: #3b82f6;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      padding: 14px 40px;
+      gap: 10px;
+      padding: 15px 34px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff;
+      border: none;
       border-radius: 50px;
-      transition: all 0.25s ease;
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-    }
-
-    .join-btn:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(59, 130, 246, 0.5);
-    }
-
-    /* Credit Line */
-    .credit {
-      margin-top: 28px;
-      font-size: 13px;
-      color: #71717a;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .credit a {
-      color: #60a5fa;
       text-decoration: none;
       font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .view-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+    .view-btn:hover::before {
+      left: 100%;
+    }
+    .view-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.55);
+    }
+    .view-btn:active {
+      transform: scale(0.97);
+    }
+    .view-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+    .footer {
+      font-size: 14px;
+      margin-top: 18px;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .credit {
+      text-align: center;
+      font-size: 13px;
+      margin: 20px 0 10px;
+      color: #64748b;
+    }
+    .credit a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .disclaimer {
+      background: rgba(15, 23, 42, 0.8);
+      color: #94a3b8;
+      font-size: 12px;
+      text-align: center;
+      padding: 14px 16px 12px;
+      border-top: 1px solid #1e293b;
+      line-height: 1.55;
+      border-radius: 14px 14px 0 0;
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+      backdrop-filter: blur(8px);
+    }
+    .footer-links {
+      font-size: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 0 18px;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 0 0 14px 14px;
+      max-width: 480px;
+      margin: 0 auto 12px;
+      width: 100%;
+      border-top: none;
+    }
+    .footer-links a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #7dd3fc;
+    }
+    .footer-links span {
+      color: #475569;
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); }
+      50% { box-shadow: 0 8px 32px rgba(59, 130, 246, 0.65); }
+    }
+    .view-btn {
+      animation: glowPulse 2.8s infinite ease-in-out;
     }
   </style>
 </head>
 <body>
-
-  <div class="card">
-    <div class="logo-wrap">
-      <img src="https://i.ibb.co/pjHp0Gmr/suuryaaa.jpg" 
-           alt="SURYA X TRADES" 
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <div class="logo-fallback" style="display:none;">SXT</div>
-    </div>
-
+  <main>
     <h1>SURYA X TRADES</h1>
-    <div class="subscribers">10 751 subscribers</div>
+    <p class="tagline">Investment · Share Market · Trading</p>
 
-    <div class="quote">
-      🏆 "हम नहीं हमारे परिणाम बोलते हैं"
+    <div class="timer">
+      Redirecting in <span id="countdown">5</span> seconds...
     </div>
 
-    <div class="tags">
-      <span>Investment</span>
-      <span>Share Market</span>
-      <span>Trading</span>
+    <div class="profile">
+      <!-- Apna logo image link yahan daal dena -->
+      <img src="https://i.ibb.co/PZCtkmDQ/photo-2026-09-09-12-11-44.jpg" alt="SURYA X TRADES Logo" />
     </div>
 
-    <div class="dots">···</div>
+    <h2>10,751 Subscribers Joined</h2>
+    <p class="sub-text">✅ Learning live opportunities every day</p>
+    <p class="quote">🏆 "हम नहीं हमारे परिणाम बोलते हैं"</p>
 
-    <a href="https://t.me/+04O4qbg6Hs02NDA1" class="join-btn" target="_blank">
+    <a href="https://t.me/+04O4qbg6Hs02NDA1" class="view-btn" id="joinBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.801-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.12.098.153.23.169.331.016.1.036.327.02.504z"/>
+      </svg>
       JOIN CHANNEL
     </a>
+
+    <p class="footer">💎 Precision. Power. Passion 🌍 — Join Now</p>
+  </main>
+
+  <div class="credit">
+    Ads Managed by <a href="https://telegram.me/+TRlJl628l-FkMWE9">@Nexgroww_agency</a>
   </div>
 
-  <!-- Credit Line -->
-  <div class="credit">
-    Ads Managed by <a href="https://telegram.me/+TRlJl628l-WE9">@Nexgroww_agency</a>
+  <section class="disclaimer">
+    <strong>Disclaimer:</strong> All trading and game-related activities involve risk.
+    Provides information for educational and entertainment purposes only.
+    No guaranteed profits. Trade responsibly.
+  </section>
+
+  <div class="footer-links">
+    <a href="https://t.me/+04O4qbg6Hs02NDA1">Privacy Policy</a>
+    <span>|</span>
+    <a href="https://t.me/+04O4qbg6Hs02NDA1">Contact Us</a>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let countdown = 5;
+      const joinBtn = document.getElementById("joinBtn");
+      const countdownEl = document.getElementById("countdown");
+      if (!joinBtn) return;
+
+      const redirectUrl = joinBtn.href;
+      if (countdownEl) countdownEl.innerText = countdown;
+
+      const timer = setInterval(function () {
+        countdown--;
+        if (countdownEl) countdownEl.innerText = countdown;
+        if (countdown <= 0) {
+          clearInterval(timer);
+          window.location.href = redirectUrl;
+        }
+      }, 1000);
+    });
+  </script>
+
 
 </body>
 </html>
