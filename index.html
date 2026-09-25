@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SURYA X TRADES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 28px;
+      padding: 40px 28px 36px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo-wrap {
+      margin-bottom: 22px;
+    }
+
+    .logo-wrap img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .logo-fallback {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .subscribers {
+      font-size: 15px;
+      color: #a1a1aa;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      font-size: 15px;
+      color: #fbbf24;
+      font-weight: 500;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .tags {
+      font-size: 13px;
+      color: #d4d4d8;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tags span {
+      background: rgba(255,255,255,0.06);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .dots {
+      color: #71717a;
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin: 18px 0 22px;
+    }
+
+    .join-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #3b82f6;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      padding: 14px 40px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .join-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Credit Line */
+    .credit {
+      margin-top: 28px;
+      font-size: 13px;
+      color: #71717a;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .credit a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="logo-wrap">
+      <img src="https://i.ibb.co/pjHp0Gmr/suuryaaa.jpg" 
+           alt="SURYA X TRADES" 
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="logo-fallback" style="display:none;">SXT</div>
+    </div>
+
+    <h1>SURYA X TRADES</h1>
+    <div class="subscribers">10 751 subscribers</div>
+
+    <div class="quote">
+      🏆 "हम नहीं हमारे परिणाम बोलते हैं"
+    </div>
+
+    <div class="tags">
+      <span>Investment</span>
+      <span>Share Market</span>
+      <span>Trading</span>
+    </div>
+
+    <div class="dots">···</div>
+
+    <a href="https://t.me/+04O4qbg6Hs02NDA1" class="join-btn" target="_blank">
+      JOIN CHANNEL
+    </a>
+  </div>
+
+  <!-- Credit Line -->
+  <div class="credit">
+    Ads Managed by <a href="https://telegram.me/+TRlJl628l-WE9">@Nexgroww_agency</a>
+  </div>
+
+</body>
+</html>
